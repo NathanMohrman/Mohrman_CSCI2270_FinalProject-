@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1430155186 source:c:\users\nathan\desktop\final project\addlist.cpp
+	"AddList.h"
+	<iostream>
+
+1430154544 c:\users\nathan\desktop\final project\addlist.h
+	<iostream>
+
+1430155346 source:c:\users\nathan\desktop\final project\main.cpp
+	<iostream>
+	<sstream>
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"AddList.h"
+
