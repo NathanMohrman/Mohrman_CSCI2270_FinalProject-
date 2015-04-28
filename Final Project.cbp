@@ -29,7 +29,10 @@
 			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-Wfatal-errors" />
+			<Add option="-Wextra" />
 			<Add option="-Wall" />
+			<Add option="-g" />
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="AddList.cpp" />

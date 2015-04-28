@@ -9,7 +9,7 @@
 using namespace std;
 AddList mylist;
 
-void displayMainMenu(int &select)
+void displayMainMenu(int &select) // main display menu
 {
     cout << "Welcome to Nathan's List:" << endl;
     cout << "" << endl;
@@ -20,7 +20,7 @@ void displayMainMenu(int &select)
         cin >> select;
 }
 
-void displayItemMenu(int &select)
+void displayItemMenu(int &select) // sub display menu
 {
     cout << "" << endl;
     cout << "1. Cars " << endl;
@@ -34,10 +34,10 @@ void displayItemMenu(int &select)
 
 int main()
 {
-    List *carList = new List;
-    List *electronicList = new List;
-    List *bikeList = new List;
-    List *freeList = new List;
+    List *carList = new List(); // declare and allocate memory for new list
+    List *electronicList = new List();
+    List *bikeList = new List();
+    List *freeList = new List();
 
     int select = 0;
     bool exit = false;
@@ -97,7 +97,7 @@ int main()
                             getline(cin, inComments);
                             cout << "Enter price" << endl;
                             cin >> inPrice;
-                            mylist.AddCar(carList, inTitle, inComments, inPrice);
+                            mylist.Add(carList, inTitle, inComments, inPrice);
                             break;
                         case 2:
                             getchar();
@@ -107,7 +107,7 @@ int main()
                             getline(cin, inComments);
                             cout << "Enter price" << endl;
                             cin >> inPrice;
-                            mylist.AddElectronic(electronicList, inTitle, inComments, inPrice);
+                            mylist.Add(electronicList, inTitle, inComments, inPrice);
                             break;
                         case 3:
                             getchar();
@@ -117,7 +117,7 @@ int main()
                             getline(cin, inComments);
                             cout << "Enter price" << endl;
                             cin >> inPrice;
-                            mylist.AddBike(bikeList, inTitle, inComments, inPrice);
+                            mylist.Add(bikeList, inTitle, inComments, inPrice);
                             break;
                         case 4:
                             getchar();
@@ -127,7 +127,7 @@ int main()
                             getline(cin, inComments);
                             cout << "Enter price" << endl;
                             cin >> inPrice;
-                            mylist.AddFree(freeList, inTitle, inComments, inPrice);
+                            mylist.Add(freeList, inTitle, inComments, inPrice);
                             break;
                         case 5:
                             exit2 = true;
