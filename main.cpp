@@ -16,8 +16,8 @@ void displayMainMenu(int &select) // main display menu
     cout << "1. Search" << endl;
     cout << "2. Sell" << endl;
     cout << "3. End Program" << endl;
-
-        cin >> select;
+    
+    cin >> select;
 }
 
 void displayItemMenu(int &select) // sub display menu
@@ -28,8 +28,8 @@ void displayItemMenu(int &select) // sub display menu
     cout << "3. Bikes " << endl;
     cout << "4. Free " << endl;
     cout << "5. Return to main menu " << endl;
-
-        cin >> select;
+    
+    cin >> select;
 }
 
 int main()
@@ -37,15 +37,15 @@ int main()
     List *carList = new List(); // declare and allocate memory for new list
     List *electronicList = new List();
     List *bikeList = new List();
-    List *freeList = new List();
-
+    FreeList *freeList = new FreeList();
+    
     int select = 0;
     bool exit = false;
     while(!exit) {
         displayMainMenu(select);
         switch(select) {
             case 1:
-                {
+            {
                 bool exit1 = false;
                 while(!exit1){
                     cout << "" << endl;
@@ -53,32 +53,28 @@ int main()
                     displayItemMenu(select);
                     switch(select) {
                         case 1:
-                            cout << "Cars for sale: " << endl;
-                            cout << "" << endl;
+                            cout << "Cars for sale: " <<"\n"<< endl;
                             mylist.PrintList(carList);
                             break;
                         case 2:
-                            cout << "Electronics for sale: " << endl;
-                            cout << "" << endl;
+                            cout << "Electronics for sale: " <<"\n"<< endl;
                             mylist.PrintList(electronicList);
                             break;
                         case 3:
-                            cout << "Bikes for sale: " << endl;
-                            cout << "" << endl;
+                            cout << "Bikes for sale: " <<"\n"<< endl;
                             mylist.PrintList(bikeList);
                             break;
                         case 4:
-                            cout << "Free items: " << endl;
-                            cout << "" << endl;
-                            mylist.PrintList(freeList);
+                            cout << "Free items: " <<"\n"<< endl;
+                            mylist.FreePrintList(freeList);
                             break;
                         case 5:
                             exit1 = true;
-                        }
-                    }break;
-                }
-                case 2:
-                {
+                    }
+                }break;
+            }
+            case 2:
+            {
                 string inTitle;
                 string inComments;
                 int inPrice;
@@ -125,19 +121,19 @@ int main()
                             getline(cin, inTitle);
                             cout << "Enter comments" << endl;
                             getline(cin, inComments);
-                            cout << "Enter price" << endl;
-                            cin >> inPrice;
-                            mylist.Add(freeList, inTitle, inComments, inPrice);
+                            mylist.FreeAdd(freeList, inTitle, inComments);
                             break;
                         case 5:
                             exit2 = true;
-                        }
-                    }break;
-                }
-                case 3:
+                    }
+                }break;
+            }
+            case 3:
                 exit = true;
                 break;
-
-            }
+                
         }
     }
+}
+
+
